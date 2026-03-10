@@ -2,7 +2,7 @@
 title: 2025-2026年游戏行业的十大重大突破与趋势
 published: 2026-03-11
 description: "从AI革命到云游戏爆发，游戏行业如何重塑娱乐未来"
-image: "/images/gaming-industry-header.png"
+image: "/images/gaming-industry-2025-header.png"
 tags: ["游戏", "游戏行业", "AI游戏", "云游戏", "VR", "电竞", "独立游戏"]
 category: 游戏洞察
 draft: false
