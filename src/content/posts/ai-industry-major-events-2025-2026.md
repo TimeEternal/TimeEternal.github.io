@@ -1,9 +1,17 @@
 ---
 title: "2025-2026年人工智能行业的十大重大突破与趋势"
 description: "从主流化到科学革命，AI如何重塑我们的世界"
-pubDate: 2026-03-10
+pubDate: 2026-03-11
+author: "焱伟"
 heroImage: "/images/tile.png"
-tags: ["AI", "人工智能", "科技趋势", "大模型", "开源AI"]
+tags: ["AI", "人工智能", "科技趋势", "大模型", "开源AI", "机器人", "量子计算"]
+category: "技术洞察"
+draft: false
+readingTime: "8分钟"
+featured: true
+canonicalURL: "https://timeeternal.github.io/posts/ai-industry-major-events-2025-2026"
+ogImage: "/images/tile.png"
+twitterCard: summary_large_image
 ---
 
 # 2025-2026：人工智能行业的十大重大突破与趋势
