@@ -1,6 +1,6 @@
 ---
 title: AI Industry Major Events 2025-2026
-published: 2026-03-11
+published: "2026-03-11"
 description: "The top 10 breakthroughs and trends that shaped the AI industry from mainstream adoption to scientific revolution."
 image: "/images/tile.png"
 tags: ["AI", "Artificial Intelligence", "Tech Trends", "Large Models", "Open Source AI", "Robotics", "Quantum Computing"]
