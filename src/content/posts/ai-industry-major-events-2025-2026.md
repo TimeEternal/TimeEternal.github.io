@@ -1,10 +1,10 @@
 ---
-title: AI Industry Major Events 2025-2026
+title: 2025-2026年人工智能行业的十大重大突破与趋势
 published: 2026-03-11
-description: "The top 10 breakthroughs and trends that shaped the AI industry from mainstream adoption to scientific revolution."
+description: "从主流化到科学革命，塑造人工智能行业的十大突破与趋势。"
 image: "/images/ai-industry-2025-header.png"
-tags: ["AI", "Artificial Intelligence", "Tech Trends", "Large Models", "Open Source AI", "Robotics", "Quantum Computing"]
-category: Technical Insights
+tags: ["人工智能", "AI", "科技趋势", "大模型", "开源AI", "机器人", "量子计算"]
+category: 技术洞察
 draft: false
 ---
 
