@@ -1,79 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background gradient -->
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1a1a2e"/>
-      <stop offset="50%" stop-color="#16213e"/>
-      <stop offset="100%" stop-color="#0f3460"/>
-    </linearGradient>
-    <linearGradient id="neural" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4cc9f0"/>
-      <stop offset="50%" stop-color="#4361ee"/>
-      <stop offset="100%" stop-color="#3a0ca3"/>
-    </linearGradient>
-  </defs>
-  
   <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="#1a1a2e"/>
   
-  <!-- Neural network nodes -->
-  <circle cx="200" cy="150" r="8" fill="url(#neural)"/>
-  <circle cx="350" cy="100" r="8" fill="url(#neural)"/>
-  <circle cx="500" cy="180" r="8" fill="url(#neural)"/>
-  <circle cx="650" cy="120" r="8" fill="url(#neural)"/>
-  <circle cx="800" cy="200" r="8" fill="url(#neural)"/>
-  <circle cx="950" cy="150" r="8" fill="url(#neural)"/>
+  <!-- Simple neural network pattern -->
+  <circle cx="300" cy="200" r="12" fill="#4cc9f0"/>
+  <circle cx="600" cy="150" r="12" fill="#4361ee"/>
+  <circle cx="900" cy="200" r="12" fill="#3a0ca3"/>
+  <circle cx="450" cy="350" r="12" fill="#f72585"/>
+  <circle cx="750" cy="350" r="12" fill="#4cc9f0"/>
   
-  <circle cx="250" cy="300" r="8" fill="url(#neural)"/>
-  <circle cx="400" cy="250" r="8" fill="url(#neural)"/>
-  <circle cx="550" cy="330" r="8" fill="url(#neural)"/>
-  <circle cx="700" cy="270" r="8" fill="url(#neural)"/>
-  <circle cx="850" cy="350" r="8" fill="url(#neural)"/>
-  <circle cx="1000" cy="300" r="8" fill="url(#neural)"/>
+  <!-- Connections -->
+  <line x1="300" y1="200" x2="600" y2="150" stroke="#4cc9f0" stroke-width="2" opacity="0.7"/>
+  <line x1="600" y1="150" x2="900" y2="200" stroke="#4361ee" stroke-width="2" opacity="0.7"/>
+  <line x1="300" y1="200" x2="450" y2="350" stroke="#f72585" stroke-width="2" opacity="0.7"/>
+  <line x1="900" y1="200" x2="750" y2="350" stroke="#4cc9f0" stroke-width="2" opacity="0.7"/>
+  <line x1="450" y1="350" x2="750" y2="350" stroke="#3a0ca3" stroke-width="2" opacity="0.7"/>
   
-  <circle cx="300" cy="450" r="8" fill="url(#neural)"/>
-  <circle cx="450" cy="400" r="8" fill="url(#neural)"/>
-  <circle cx="600" cy="480" r="8" fill="url(#neural)"/>
-  <circle cx="750" cy="420" r="8" fill="url(#neural)"/>
-  <circle cx="900" cy="500" r="8" fill="url(#neural)"/>
-  <circle cx="1050" cy="450" r="8" fill="url(#neural)"/>
-  
-  <!-- Neural network connections -->
-  <line x1="200" y1="150" x2="350" y2="100" stroke="#4cc9f0" stroke-width="1" opacity="0.6"/>
-  <line x1="350" y1="100" x2="500" y2="180" stroke="#4cc9f0" stroke-width="1" opacity="0.6"/>
-  <line x1="500" y1="180" x2="650" y2="120" stroke="#4cc9f0" stroke-width="1" opacity="0.6"/>
-  <line x1="650" y1="120" x2="800" y2="200" stroke="#4cc9f0" stroke-width="1" opacity="0.6"/>
-  <line x1="800" y1="200" x2="950" y2="150" stroke="#4cc9f0" stroke-width="1" opacity="0.6"/>
-  
-  <line x1="250" y1="300" x2="400" y2="250" stroke="#4361ee" stroke-width="1" opacity="0.6"/>
-  <line x1="400" y1="250" x2="550" y2="330" stroke="#4361ee" stroke-width="1" opacity="0.6"/>
-  <line x1="550" y1="330" x2="700" y2="270" stroke="#4361ee" stroke-width="1" opacity="0.6"/>
-  <line x1="700" y1="270" x2="850" y2="350" stroke="#4361ee" stroke-width="1" opacity="0.6"/>
-  <line x1="850" y1="350" x2="1000" y2="300" stroke="#4361ee" stroke-width="1" opacity="0.6"/>
-  
-  <line x1="300" y1="450" x2="450" y2="400" stroke="#3a0ca3" stroke-width="1" opacity="0.6"/>
-  <line x1="450" y1="400" x2="600" y2="480" stroke="#3a0ca3" stroke-width="1" opacity="0.6"/>
-  <line x1="600" y1="480" x2="750" y2="420" stroke="#3a0ca3" stroke-width="1" opacity="0.6"/>
-  <line x1="750" y1="420" x2="900" y2="500" stroke="#3a0ca3" stroke-width="1" opacity="0.6"/>
-  <line x1="900" y1="500" x2="1050" y2="450" stroke="#3a0ca3" stroke-width="1" opacity="0.6"/>
-  
-  <!-- Cross connections -->
-  <line x1="200" y1="150" x2="250" y2="300" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="350" y1="100" x2="400" y2="250" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="500" y1="180" x2="550" y2="330" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="650" y1="120" x2="700" y2="270" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="800" y1="200" x2="850" y2="350" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="950" y1="150" x2="1000" y2="300" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  
-  <line x1="250" y1="300" x2="300" y2="450" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="400" y1="250" x2="450" y2="400" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="550" y1="330" x2="600" y2="480" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="700" y1="270" x2="750" y2="420" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="850" y1="350" x2="900" y2="500" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  <line x1="1000" y1="300" x2="1050" y2="450" stroke="#f72585" stroke-width="1" opacity="0.4"/>
-  
-  <!-- Title text -->
-  <text x="600" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">
-    AI Industry 2025-2026
-  </text>
+  <!-- Title -->
+  <text x="600" y="100" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" text-anchor="middle">AI Industry 2025-2026</text>
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="24" fill="#4cc9f0" text-anchor="middle">Major Breakthroughs & Trends</text>
+</svg>
