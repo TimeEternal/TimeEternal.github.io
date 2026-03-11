@@ -2,7 +2,7 @@
 title: 网易雷火：从游戏工作室到新质生产力引领者
 published: 2026-03-11
 description: "深度解析网易雷火事业群的发展历程，从游戏研发到AI技术、具身智能的跨越式转型。"
-image: "/images/netease-leihuo-header.svg"
+image: "/images/netease-leihuo-header.png"
 tags: ["网易", "雷火", "游戏", "AI", "具身智能", "新质生产力", "科技趋势"]
 category: 行业分析
 draft: false
