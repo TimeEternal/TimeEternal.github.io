@@ -16,6 +16,14 @@ draft: false
 
 2048 是一款简单却令人上瘾的数字益智游戏，由 Gabriele Cirulli 于 2014 年创建。这款游戏迅速风靡全球，成为许多人消磨时间的首选。今天，我要向大家推荐一个优秀的开源实现 —— **kubowania/2048**，它使用纯原生技术栈构建，非常适合前端开发者学习游戏开发的基础知识。
 
+## 🎮 在线试玩
+
+下面就是 2048 游戏的在线版本，直接在浏览器中即可游玩！使用 **方向键**（↑↓←→）或 **触摸滑动** 来移动方块。
+
+<iframe src="/games/2048/index.html" width="100%" height="600" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
+
+> 💡 **游戏目标**：合并相同数字的方块，最终得到 **2048**！
+
 ## 项目概览
 
 **项目地址：** https://github.com/kubowania/2048
