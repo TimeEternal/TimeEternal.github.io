@@ -1,0 +1,59 @@
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative elements - Game controllers and circuits -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="80" fill="#e94560"/>
+    <circle cx="1100" cy="500" r="120" fill="#533483"/>
+    <rect x="200" y="400" width="60" height="60" fill="#e94560" transform="rotate(45 230 430)"/>
+    <rect x="900" y="150" width="80" height="80" fill="#533483" transform="rotate(30 940 190)"/>
+  </g>
+  
+  <!-- Circuit lines -->
+  <g stroke="#e94560" stroke-width="2" opacity="0.3" fill="none">
+    <path d="M 0 300 Q 300 200 600 300 T 1200 300"/>
+    <path d="M 0 350 Q 400 250 800 350 T 1200 350"/>
+    <path d="M 0 400 Q 200 300 400 400 T 800 400"/>
+  </g>
+  
+  <!-- Main title area -->
+  <g transform="translate(600, 250)">
+    <!-- Logo/Icon representation -->
+    <g transform="translate(-50, -80)">
+      <rect x="0" y="0" width="100" height="100" rx="20" fill="url(#accentGradient)"/>
+      <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">雷</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">网易雷火</text>
+    <text x="0" y="130" font-family="Arial, sans-serif" font-size="28" fill="#e94560" text-anchor="middle">NetEase Leihuo</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="200" font-family="Arial, sans-serif" font-size="20" fill="#aaaaaa" text-anchor="middle">从游戏工作室到新质生产力引领者</text>
+  </g>
+  
+  <!-- Bottom decorative bar -->
+  <rect x="0" y="550" width="1200" height="50" fill="url(#accentGradient)" opacity="0.8"/>
+  
+  <!-- Tech keywords -->
+  <g transform="translate(600, 520)">
+    <text x="-400" y="0" font-family="Arial, sans-serif" font-size="14" fill="#aaaaaa" text-anchor="middle">游戏</text>
+    <text x="-200" y="0" font-family="Arial, sans-serif" font-size="14" fill="#aaaaaa" text-anchor="middle">AI</text>
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#aaaaaa" text-anchor="middle">具身智能</text>
+    <text x="200" y="0" font-family="Arial, sans-serif" font-size="14" fill="#aaaaaa" text-anchor="middle">新质生产力</text>
+    <text x="400" y="0" font-family="Arial, sans-serif" font-size="14" fill="#aaaaaa" text-anchor="middle">全球化</text>
+  </g>
+</svg>
