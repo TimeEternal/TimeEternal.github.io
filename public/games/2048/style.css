@@ -3,6 +3,7 @@ body {
     display: flex;
     justify-content: center;
     font-family: "Clear Sans", Helvetica, serif;
+    overflow: hidden; /* Prevent body scroll */
 }
 
 h1 {
@@ -19,6 +20,7 @@ p, h2 {
 .container {
     width: 468px;
     margin-top: 30px;
+    outline: none; /* Remove outline for focus */
 }
 
 .info {
@@ -36,6 +38,7 @@ p, h2 {
     border: 7px solid #BBADA0;
     border-radius: 6px;
     margin-top: 20px;
+    position: relative;
 }
 
 .grid div {
@@ -49,6 +52,106 @@ p, h2 {
     text-align: center;
     font-size: 60px;
     line-height: 1.6;
+    transition: all 0.15s ease-in-out; /* Smooth transition for all properties */
+    animation: pop 0.2s ease-in-out; /* Pop animation for new tiles */
+}
+
+/* Animation for new tiles */
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation for merged tiles */
+@keyframes merge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.grid div.merged {
+    animation: merge 0.2s ease-in-out;
+}
+
+/* Tile colors */
+.grid div[data-value="2"] {
+    background-color: #EEE4DA;
+    color: #776E65;
+}
+
+.grid div[data-value="4"] {
+    background-color: #EDE0C8;
+    color: #776E65;
+}
+
+.grid div[data-value="8"] {
+    background-color: #F2B179;
+    color: #F9F6F2;
+}
+
+.grid div[data-value="16"] {
+    background-color: #F59563;
+    color: #F9F6F2;
+}
+
+.grid div[data-value="32"] {
+    background-color: #F67C5F;
+    color: #F9F6F2;
+}
+
+.grid div[data-value="64"] {
+    background-color: #F65E3B;
+    color: #F9F6F2;
+}
+
+.grid div[data-value="128"] {
+    background-color: #EDCF72;
+    color: #F9F6F2;
+    font-size: 50px;
+    line-height: 1.9;
+}
+
+.grid div[data-value="256"] {
+    background-color: #EDCC61;
+    color: #F9F6F2;
+    font-size: 50px;
+    line-height: 1.9;
+}
+
+.grid div[data-value="512"] {
+    background-color: #EDC850;
+    color: #F9F6F2;
+    font-size: 50px;
+    line-height: 1.9;
+}
+
+.grid div[data-value="1024"] {
+    background-color: #EDC53F;
+    color: #F9F6F2;
+    font-size: 40px;
+    line-height: 2.4;
+}
+
+.grid div[data-value="2048"] {
+    background-color: #EDC22E;
+    color: #F9F6F2;
+    font-size: 40px;
+    line-height: 2.4;
 }
 
 .score-container {
@@ -68,3 +171,16 @@ p, h2 {
     font-size: 16px;
 }
 
+/* Focus indicator for game container */
+.container:focus {
+    outline: 2px solid #8f7a66;
+    outline-offset: 4px;
+}
+
+/* Instructions */
+.instructions {
+    text-align: center;
+    color: #8f7a66;
+    font-size: 14px;
+    margin-top: 10px;
+}

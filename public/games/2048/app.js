@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < width * width; i++) {
             const square = document.createElement("div")
             square.innerHTML = 0
+            square.setAttribute("data-value", 0)
             gridDisplay.appendChild(square)
             squares.push(square)
         }
@@ -24,6 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const randomNumber = Math.floor(Math.random() * squares.length)
         if (squares[randomNumber].innerHTML == 0) {
             squares[randomNumber].innerHTML = 2
+            squares[randomNumber].setAttribute("data-value", 2)
+            // Add animation class
+            squares[randomNumber].classList.add("pop")
+            setTimeout(() => {
+                squares[randomNumber].classList.remove("pop")
+            }, 200)
             checkForGameOver()
         } else generate()
     }
@@ -42,10 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 let zeros = Array(missing).fill(0)
                 let newRow = zeros.concat(filteredRow)
 
-                squares[i].innerHTML = newRow[0]
-                squares[i + 1].innerHTML = newRow[1]
-                squares[i + 2].innerHTML = newRow[2]
-                squares[i + 3].innerHTML = newRow[3]
+                updateSquare(i, newRow[0])
+                updateSquare(i + 1, newRow[1])
+                updateSquare(i + 2, newRow[2])
+                updateSquare(i + 3, newRow[3])
             }
         }
     }
@@ -64,10 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 let zeros = Array(missing).fill(0)
                 let newRow = filteredRow.concat(zeros)
 
-                squares[i].innerHTML = newRow[0]
-                squares[i + 1].innerHTML = newRow[1]
-                squares[i + 2].innerHTML = newRow[2]
-                squares[i + 3].innerHTML = newRow[3]
+                updateSquare(i, newRow[0])
+                updateSquare(i + 1, newRow[1])
+                updateSquare(i + 2, newRow[2])
+                updateSquare(i + 3, newRow[3])
             }
         }
     }
@@ -85,10 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
             let zeros = Array(missing).fill(0)
             let newColumn = filteredColumn.concat(zeros)
 
-            squares[i].innerHTML = newColumn[0]
-            squares[i + width].innerHTML = newColumn[1]
-            squares[i + width * 2].innerHTML = newColumn[2]
-            squares[i + width * 3].innerHTML = newColumn[3]
+            updateSquare(i, newColumn[0])
+            updateSquare(i + width, newColumn[1])
+            updateSquare(i + width * 2, newColumn[2])
+            updateSquare(i + width * 3, newColumn[3])
         }
     }
 
@@ -105,10 +112,25 @@ document.addEventListener("DOMContentLoaded", () => {
             let zeros = Array(missing).fill(0)
             let newColumn = zeros.concat(filteredColumn)
 
-            squares[i].innerHTML = newColumn[0]
-            squares[i + width].innerHTML = newColumn[1]
-            squares[i + width * 2].innerHTML = newColumn[2]
-            squares[i + width * 3].innerHTML = newColumn[3]
+            updateSquare(i, newColumn[0])
+            updateSquare(i + width, newColumn[1])
+            updateSquare(i + width * 2, newColumn[2])
+            updateSquare(i + width * 3, newColumn[3])
+        }
+    }
+
+    // Update square with animation
+    function updateSquare(index, value) {
+        const oldValue = parseInt(squares[index].innerHTML)
+        squares[index].innerHTML = value
+        squares[index].setAttribute("data-value", value)
+        
+        // Add merged animation if value increased
+        if (value > oldValue && oldValue !== 0) {
+            squares[index].classList.add("merged")
+            setTimeout(() => {
+                squares[index].classList.remove("merged")
+            }, 200)
         }
     }
 
@@ -116,10 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 15; i++) {
             if (squares[i].innerHTML === squares[i + 1].innerHTML) {
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i + 1].innerHTML)
-                squares[i].innerHTML = combinedTotal
-                squares[i + 1].innerHTML = 0
-                score += combinedTotal
-                scoreDisplay.innerHTML = score
+                if (squares[i].innerHTML !== "0") {
+                    updateSquare(i, combinedTotal)
+                    updateSquare(i + 1, 0)
+                    score += combinedTotal
+                    scoreDisplay.innerHTML = score
+                }
             }
         }
         checkForWin()
@@ -129,10 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 12; i++) {
             if (squares[i].innerHTML === squares[i + width].innerHTML) {
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i + width].innerHTML)
-                squares[i].innerHTML = combinedTotal
-                squares[i + width].innerHTML = 0
-                score += combinedTotal
-                scoreDisplay.innerHTML = score
+                if (squares[i].innerHTML !== "0") {
+                    updateSquare(i, combinedTotal)
+                    updateSquare(i + width, 0)
+                    score += combinedTotal
+                    scoreDisplay.innerHTML = score
+                }
             }
         }
         checkForWin()
@@ -141,12 +167,16 @@ document.addEventListener("DOMContentLoaded", () => {
     ///assign functions to keys
     function control(e) {
         if (e.key === "ArrowLeft") {
+            e.preventDefault()
             keyLeft()
         } else if (e.key === "ArrowRight") {
+            e.preventDefault()
             keyRight()
         } else if (e.key === "ArrowUp") {
+            e.preventDefault()
             keyUp()
         } else if (e.key === "ArrowDown") {
+            e.preventDefault()
             keyDown()
         }
     }
@@ -184,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function checkForWin() {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 2048) {
-                resultDisplay.innerHTML = "You WIN!"
+                resultDisplay.innerHTML = "🎉 You WIN!"
                 document.removeEventListener("keydown", control)
                 setTimeout(clear, 3000)
             }
@@ -200,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         if (zeros === 0) {
-            resultDisplay.innerHTML = "You LOSE!"
+            resultDisplay.innerHTML = "😢 You LOSE!"
             document.removeEventListener("keydown", control)
             setTimeout(clear, 3000)
         }
@@ -213,23 +243,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //add colours
     function addColours() {
         for (let i = 0; i < squares.length; i++) {
-            if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = "#afa192"
-            else if (squares[i].innerHTML == 2) squares[i].style.backgroundColor = "#eee4da"
-            else if (squares[i].innerHTML == 4) squares[i].style.backgroundColor = "#ede0c8"
-            else if (squares[i].innerHTML == 8) squares[i].style.backgroundColor = "#f2b179"
-            else if (squares[i].innerHTML == 16) squares[i].style.backgroundColor = "#ffcea4"
-            else if (squares[i].innerHTML == 32) squares[i].style.backgroundColor = "#e8c064"
-            else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = "#ffab6e"
-            else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = "#fd9982"
-            else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = "#ead79c"
-            else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = "#76daff"
-            else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = "#beeaa5"
-            else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = "#d7d4f0"
+            const value = parseInt(squares[i].innerHTML)
+            squares[i].setAttribute("data-value", value)
         }
     }
     addColours()
 
     let myTimer = setInterval(addColours, 50)
 })
-
-
