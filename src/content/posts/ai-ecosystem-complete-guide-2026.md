@@ -1,3 +1,13 @@
+---
+title: AI 生态系统完全指南：从大模型到 Agent 的全景解析
+published: 2026-03-20
+description: "一篇让小白也能看懂的 AI 技术深度科普，涵盖 LLM、Agent、Skill、MCP、Tool Calling 等核心概念，图文并茂详解 AI 生态。"
+image: ""
+tags: ["人工智能", "大模型", "Agent", "MCP", "Claude", "OpenClaw", "技术教程"]
+category: 技术教程
+draft: false
+---
+
 # 🤖 AI 生态系统完全指南：从大模型到 Agent 的全景解析
 
 > 一篇让小白也能看懂的 AI 技术深度科普，涵盖 LLM、Agent、Skill、MCP、Tool Calling 等核心概念。
