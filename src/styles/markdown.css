@@ -1,5 +1,3 @@
-@layer components;
-
 .custom-md {
     h1 {
         @apply text-3xl;
@@ -63,7 +61,25 @@
 
     .copy-btn {
         all: initial;
-        @apply btn-regular-dark opacity-0 shadow-lg shadow-black/50 absolute active:scale-90 h-8 w-8 top-3 right-3 text-sm rounded-lg transition-all ease-in-out z-20 cursor-pointer;
+        @apply flex items-center justify-center opacity-0 shadow-lg shadow-black/50 absolute active:scale-90 h-8 w-8 top-3 right-3 text-sm rounded-lg transition-all ease-in-out z-20 cursor-pointer;
+        background-color: oklch(0.45_0.01_var(--hue));
+    }
+    .copy-btn:hover {
+        background-color: oklch(0.50_0.01_var(--hue));
+    }
+    .copy-btn:active {
+        background-color: oklch(0.55_0.01_var(--hue));
+    }
+    @media (prefers-color-scheme: dark) {
+        .copy-btn {
+            background-color: oklch(0.30_0.02_var(--hue));
+        }
+        .copy-btn:hover {
+            background-color: oklch(0.35_0.03_var(--hue));
+        }
+        .copy-btn:active {
+            background-color: oklch(0.40_0.03_var(--hue));
+        }
     }
     .frame:hover .copy-btn {
         opacity: 1;
