@@ -1,8 +1,11 @@
 ---
 title: "NVIDIA Neural Texture Compression (NTC)：纹理压缩的革命"
-description: "NVIDIA 最新推出的 Neural Texture Compression (NTC) 技术可将游戏 VRAM 使用量降低高达 85%，同时保持甚至提升图像质量。"
 published: 2026-04-10
+description: "NVIDIA 最新推出的 Neural Texture Compression (NTC) 技术可将游戏 VRAM 使用量降低高达 85%，同时保持甚至提升图像质量。"
+image: ""
 tags: ["NVIDIA", "GPU", "纹理压缩", "AI", "游戏技术"]
+category: 技术分享
+draft: false
 ---
 
 > **摘要**：NVIDIA 最新推出的 Neural Texture Compression (NTC) 技术可将游戏 VRAM 使用量降低高达 85%，同时保持甚至提升图像质量。这项技术代表了纹理压缩领域的重大突破。
